@@ -1,0 +1,32 @@
+{
+  "name": "TheBookOfSpices",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "build": "rimraf ./dist && tsc",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/jest": "^22.0.1",
+    "@types/react-test-renderer": "^16.0.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.34",
+    "@types/react-native": "^0.52.0",
+    "babel-jest": "22.1.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.1.1",
+    "react-test-renderer": "16.2.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
