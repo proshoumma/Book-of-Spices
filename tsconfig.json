@@ -6,6 +6,10 @@
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typeDeclarations"
+    ],
     "types": [
       "react",
       "react-native"
