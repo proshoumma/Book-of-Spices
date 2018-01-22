@@ -1,12 +1,11 @@
-// import 'react-native';
-// import * as React from 'react';
-// import * as renderer from 'react-test-renderer';
-// import {} from 'jest'
+import {} from 'jest'
+import * as _ from 'lodash'
+import { Navigation } from 'react-native-navigation'
 
-// import App from '../App';
+import App from '../App'
 
-// it('renders correctly', () => {
-//   const tree = renderer.create(
-//     <App />
-//   );
-// });
+describe('App', () => {
+  it('got a Navigation object', () => {
+    expect(_.isEqual(App, Navigation)).toBe(true)
+  })
+})

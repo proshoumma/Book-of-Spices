@@ -1,7 +1,8 @@
-import { Navigation } from 'react-native-navigation';
+import { Navigation } from 'react-native-navigation'
 
-import Landing from './Landing';
+import Landing from './Landing'
+import { LANDING } from './constants'
 
 export function registerScreens() {
-  Navigation.registerComponent('Landing', () => Landing);
+  Navigation.registerComponent(LANDING, () => Landing)
 }
