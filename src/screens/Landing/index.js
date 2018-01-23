@@ -25,7 +25,12 @@ class Landing extends Component {
         />
 
         <View style={styles.logoContainer}>
-
+          <Text style={styles.logoLineOne}>
+            The Book of
+          </Text>
+          <Text style={styles.logoLineTwo}>
+            Spices
+          </Text>
         </View>
       </View>
     )
