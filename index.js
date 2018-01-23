@@ -1,2 +1,2 @@
-// use the App.tsx as the main entry point
-import * as App from './dist/App'
+// use the App.js as the main entry point
+import * as App from './src/App'

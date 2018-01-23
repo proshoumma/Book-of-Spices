@@ -1,2 +1,4 @@
 // using constants for screen names for avoiding mistakes
-export const LANDING:string = 'Landing'
+export const routeNames = {
+  LANDING: 'Landing'
+}
