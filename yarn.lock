@@ -3810,6 +3810,10 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-letter-spacing@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-letter-spacing/-/react-native-letter-spacing-0.0.5.tgz#24724548262e38ac5c4796b3163ca025004999bf"
+
 react-native-navigation@^1.1.346:
   version "1.1.346"
   resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.346.tgz#5c4d30f9cfebaec88bcb40ca9b2591554f2463bd"

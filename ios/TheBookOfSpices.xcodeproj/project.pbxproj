@@ -38,6 +38,9 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		0043FE20287942AB911D73CA /* Rochester.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1119EB8EE19B4D56A68F64DC /* Rochester.ttf */; };
+		7B0B85FF8D8649DD892B89C8 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517074DE1C4C447C96FFEFB5 /* Ubuntu-Light.ttf */; };
+		171663C729D14E8692398BCB /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98B50F33CB0B4FEABA6D47B5 /* Ubuntu-Medium.ttf */; };
+		E5996D19C4694262AB69B205 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50C4B39FE8794D76A76716D3 /* Ubuntu-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +341,9 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		1119EB8EE19B4D56A68F64DC /* Rochester.ttf */ = {isa = PBXFileReference; name = "Rochester.ttf"; path = "../src/fonts/Rochester.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		517074DE1C4C447C96FFEFB5 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Light.ttf"; path = "../src/fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		98B50F33CB0B4FEABA6D47B5 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Medium.ttf"; path = "../src/fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		50C4B39FE8794D76A76716D3 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../src/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +617,9 @@
 			isa = "PBXGroup";
 			children = (
 				1119EB8EE19B4D56A68F64DC /* Rochester.ttf */,
+				517074DE1C4C447C96FFEFB5 /* Ubuntu-Light.ttf */,
+				98B50F33CB0B4FEABA6D47B5 /* Ubuntu-Medium.ttf */,
+				50C4B39FE8794D76A76716D3 /* Ubuntu-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1060,6 +1069,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				0043FE20287942AB911D73CA /* Rochester.ttf in Resources */,
+				7B0B85FF8D8649DD892B89C8 /* Ubuntu-Light.ttf in Resources */,
+				171663C729D14E8692398BCB /* Ubuntu-Medium.ttf in Resources */,
+				E5996D19C4694262AB69B205 /* Ubuntu-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

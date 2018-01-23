@@ -1,6 +1,16 @@
 import { Dimensions } from 'react-native'
 
-const {height, width} = Dimensions.get('window')
+import {
+  themeFont,
+  themeColor,
+  primaryFontColor,
+  margin
+} from '../../globalStyles'
+
+const {
+  height,
+  width
+} = Dimensions.get('window')
 
 export default {
   container: {
@@ -39,16 +49,25 @@ export default {
   },
 
   logoLineOne: {
-    fontFamily: "Rochester",
+    fontFamily: themeFont,
     fontSize: 48,
     textAlign: 'center',
-    color: '#000'
+    color: primaryFontColor
   },
 
   logoLineTwo: {
-    fontFamily: "Rochester",
+    fontFamily: themeFont,
     fontSize: 64,
     textAlign: 'center',
-    color: '#e74c3c'
+    color: themeColor
+  },
+
+  bottomButtonContainer: {
+    position: 'absolute',
+    bottom: 20,
+    left: margin,
+    right: margin,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
   }
 }

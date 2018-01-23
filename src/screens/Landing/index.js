@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   View,
   Text,
-  Image
+  Image,
+  Alert
 } from 'react-native'
 
 import styles from './styles'
+import Button from './components/Button'
+import { routeNames } from '../../constants'
 
 // background image
 const backgroundImage = require('./assets/background.jpg')
@@ -15,6 +19,18 @@ class Landing extends Component {
     navBarHidden: true
   }
 
+  navigateToSpiceList = () => {
+    this.props.navigator.push({
+      screen: routeNames.SPICESLIST
+    })
+  }
+
+  navigateToSkillTest = () => {
+    this.props.navigator.push({
+      screen: routeNames.SKILLTEST
+    })
+  }
+  
   render() {
     return (
       <View style={styles.container}>
@@ -32,9 +48,25 @@ class Landing extends Component {
             Spices
           </Text>
         </View>
+
+        <View style={styles.bottomButtonContainer}>
+          <Button
+            label={'Learn'}
+            onPress={() => { this.navigateToSpiceList() }}
+          />
+
+          <Button
+            label={'Test'}
+            onPress={() => { this.navigateToSkillTest() }}
+          />
+        </View>
       </View>
     )
   }
+}
+
+Landing.propTypes = {
+  navigator: PropTypes.object
 }
 
 export default Landing
