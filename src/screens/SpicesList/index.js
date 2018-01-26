@@ -9,7 +9,7 @@ class SpicesList extends Component {
   static navigatorStyle = {
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.props.navigator.setTitle({
       title: "The Book of Spices"
     })
@@ -18,7 +18,7 @@ class SpicesList extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <Text>Spice List Page</Text>
+        <Text>Spices Page</Text>
       </View>
     )
   }

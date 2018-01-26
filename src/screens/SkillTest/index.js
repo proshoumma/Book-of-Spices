@@ -6,7 +6,7 @@ import {
 } from 'react-native'
 
 class SkillTest extends Component {
-  componentDidMount = () => {
+  componentDidMount() {
     this.props.navigator.setTitle({
       title: "Skill Test"
     })

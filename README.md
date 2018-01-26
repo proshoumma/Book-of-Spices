@@ -12,11 +12,6 @@ For starting the project or starting the react native bundler, use the following
 yarn start
 ```
 
-Then we also have to run the typescript compiler to compile the project on fly:
-```
-yarn tsc:watch
-```
-
 For running the app on ios/android, use react-native commands (make sure that you have the simulator/emulator running):
 ```
 react-native run-ios
@@ -25,7 +20,16 @@ react-native run-ios
 react-native run-android
 ```
 
-These command will get you up and running with the development environment. To build a fresh `dist` folder, use the following command:
-```
-yarn build
+## Caution
+Please do not use arrow functions for react's lifecycle functions like `componentDidMount`, `componentWillMount` etc. This breaks the hot module patching for regarding screen.
+```js
+// incorrect
+componentDidMount = () => {
+  // do something
+}
+
+// correct
+componentDidMount() {
+  // do something
+}
 ```

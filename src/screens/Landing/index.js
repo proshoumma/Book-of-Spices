@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import {
   View,
   Text,
-  Image,
-  Alert
+  Image
 } from 'react-native'
 
 import styles from './styles'
@@ -54,7 +53,6 @@ class Landing extends Component {
             label={'Learn'}
             onPress={() => { this.navigateToSpiceList() }}
           />
-
           <Button
             label={'Test'}
             onPress={() => { this.navigateToSkillTest() }}

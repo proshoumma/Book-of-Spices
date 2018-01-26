@@ -1,4 +1,3 @@
-import {} from 'jest'
 import _ from 'lodash'
 import { Navigation } from 'react-native-navigation'
 
