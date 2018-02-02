@@ -11,6 +11,9 @@ registerScreens(Navigation.registerComponent, routes)
 Navigation.startSingleScreenApp({
   screen: {
     screen: routeNames.LANDING
+  },
+  appStyle: {
+    keepStyleAcrossPush: false
   }
 })
 

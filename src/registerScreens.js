@@ -1,6 +1,6 @@
 /**
  * register screens to the Navigation objests registerComponent func
- * @param {obfunctionject} registerComponent 
+ * @param {function} registerComponent 
  * @param {array} routes 
  */
 const registerScreens = (registerComponent, routes) => {

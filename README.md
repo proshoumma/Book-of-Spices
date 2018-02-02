@@ -1,6 +1,5 @@
 # The Book of Spices
 The project is built on top of react-native using the following major libraries:
-* typescript - for better development environment, less errors and strict typing
 * jest - for unit testing
 * wix/detox - for end-to-end testing (not yet)
 * wix/react-native-navigation - for a purely native navigation system
@@ -23,12 +22,12 @@ react-native run-android
 ## Caution
 Please do not use arrow functions for react's lifecycle functions like `componentDidMount`, `componentWillMount` etc. This breaks the hot module patching for regarding screen.
 ```js
-// incorrect
+// incorrect 👎
 componentDidMount = () => {
   // do something
 }
 
-// correct
+// correct 👍
 componentDidMount() {
   // do something
 }

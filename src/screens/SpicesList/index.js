@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
   View,
-  Text
+  ScrollView
 } from 'react-native'
+
+import styles from './styles'
+import SpiceBox from './SpiceBox'
+import { navigatorStyles } from '../../globalStyles'
 
 class SpicesList extends Component {
   static navigatorStyle = {
+    ...navigatorStyles
   }
 
   componentDidMount() {
@@ -17,9 +22,20 @@ class SpicesList extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <Text>Spices Page</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+          <SpiceBox />
+        </View>
+      </ScrollView>
     )
   }
 }
