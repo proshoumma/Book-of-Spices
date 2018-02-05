@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import TextSpaced from 'react-native-letter-spacing'
 
-import styles from './button_styles'
+import styles from './styles'
 
 const Button = (props) => {
   const {

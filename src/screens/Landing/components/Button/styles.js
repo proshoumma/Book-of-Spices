@@ -7,7 +7,7 @@ import {
   fontFamilyBold,
   buttonHeight,
   margin
-} from '../../../globalStyles'
+} from '../../../../globalStyles'
 
 const { width } = Dimensions.get('window')
 const buttonWidth = (width / 2) - (margin * 2)

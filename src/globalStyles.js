@@ -13,7 +13,7 @@ export const themeColor = '#e74c3c'
 export const primaryFontSize = 14
 
 // font families
-export const fontFamily = "Ubunu-Regular"
+export const fontFamily = "Ubuntu-Regular"
 export const fontFamilyBold = "Ubuntu-Medium"
 export const fontFamilyLight = "Ubuntu-Light"
 export const themeFont = "Rochester"

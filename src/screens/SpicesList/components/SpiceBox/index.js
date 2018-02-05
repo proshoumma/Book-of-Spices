@@ -8,7 +8,7 @@ import {
 import TextSpaced from 'react-native-letter-spacing'
 
 import styles from './styles'
-import { activeOpacity } from '../../../globalStyles'
+import { activeOpacity } from '../../../../globalStyles'
 
 const SpiceBox = (props) => {
   const {

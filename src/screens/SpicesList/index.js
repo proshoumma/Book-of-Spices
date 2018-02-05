@@ -6,8 +6,9 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import SpiceBox from './SpiceBox'
+import SpiceBox from './components/SpiceBox'
 import { navigatorStyles } from '../../globalStyles'
+import { routeNames } from '../../constants'
 
 class SpicesList extends Component {
   static navigatorStyle = {
@@ -24,8 +25,22 @@ class SpicesList extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <SpiceBox />
-          <SpiceBox />
+          <SpiceBox
+            name={'Cardamom'}
+            onPress={() => {
+              this.props.navigator.push({
+                screen: routeNames.SPICE_DETAIL
+              })
+            }}
+          />
+          <SpiceBox
+            name={'Cinnamon'}
+            onPress={() => {
+              this.props.navigator.push({
+                screen: routeNames.SPICE_DETAIL
+              })
+            }}
+          />
           <SpiceBox />
           <SpiceBox />
           <SpiceBox />

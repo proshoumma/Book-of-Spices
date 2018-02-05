@@ -20,13 +20,13 @@ class Landing extends Component {
 
   navigateToSpiceList = () => {
     this.props.navigator.push({
-      screen: routeNames.SPICESLIST
+      screen: routeNames.SPICES_LIST
     })
   }
 
   navigateToSkillTest = () => {
     this.props.navigator.push({
-      screen: routeNames.SKILLTEST
+      screen: routeNames.SKILL_TEST
     })
   }
   

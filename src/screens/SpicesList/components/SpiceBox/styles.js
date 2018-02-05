@@ -6,7 +6,7 @@ import {
   fontFamilyBold,
   primaryFontColor,
   primaryFontSize
-} from '../../../globalStyles'
+} from '../../../../globalStyles'
 
 // relative size for each spice box
 const { width, height } = Dimensions.get('window')

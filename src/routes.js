@@ -1,12 +1,14 @@
 import Landing from './screens/Landing'
 import SpicesList from './screens/SpicesList'
 import SkillTest from './screens/SkillTest'
+import SpiceDetail from './screens/SpiceDetail'
 import { routeNames } from './constants'
 
 const {
   LANDING,
-  SPICESLIST,
-  SKILLTEST
+  SPICES_LIST,
+  SKILL_TEST,
+  SPICE_DETAIL
 } = routeNames
 
 const routes = [
@@ -15,12 +17,16 @@ const routes = [
     component: Landing
   },
   {
-    name: SPICESLIST,
+    name: SPICES_LIST,
     component: SpicesList
   },
   {
-    name: SKILLTEST,
+    name: SKILL_TEST,
     component: SkillTest
+  },
+  {
+    name: SPICE_DETAIL,
+    component: SpiceDetail
   }
 ]
 
