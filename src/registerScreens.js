@@ -1,3 +1,7 @@
+import { Provider } from 'react-redux'
+
+import store from './store'
+
 /**
  * register screens to the Navigation objests registerComponent func
  * @param {function} registerComponent 
@@ -5,7 +9,7 @@
  */
 const registerScreens = (registerComponent, routes) => {
   routes.forEach((route) => {
-    registerComponent(route.name, () => route.component)
+    registerComponent(route.name, () => route.component, store, Provider)
   })
 }
 

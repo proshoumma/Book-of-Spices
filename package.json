@@ -13,7 +13,9 @@
     "react-native": "0.51.0",
     "react-native-letter-spacing": "^0.0.5",
     "react-native-navigation": "^1.1.346",
-    "react-native-swiper": "^1.5.13"
+    "react-native-swiper": "^1.5.13",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -22,7 +24,8 @@
     "eslint": "^4.16.0",
     "eslint-plugin-react": "^7.5.1",
     "jest": "22.1.1",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "redux-devtools-extension": "^2.13.2"
   },
   "jest": {
     "preset": "react-native"

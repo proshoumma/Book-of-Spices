@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import {
   View,
   ScrollView
@@ -21,42 +22,46 @@ class SpicesList extends Component {
     })
   }
 
+  renderSpiceList = () => {
+    const { spiceList } = this.props
+    return spiceList.map((eachSpice, index) => {
+      return (
+        <SpiceBox
+          key={index}
+          name={eachSpice.name}
+          image={eachSpice.thumbnail}
+          onPress={() => {
+            this.props.navigator.push({
+              screen: routeNames.SPICE_DETAIL
+            })
+          }}
+        />
+      )
+    })
+  }
+
   render() {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <SpiceBox
-            name={'Cardamom'}
-            onPress={() => {
-              this.props.navigator.push({
-                screen: routeNames.SPICE_DETAIL
-              })
-            }}
-          />
-          <SpiceBox
-            name={'Cinnamon'}
-            onPress={() => {
-              this.props.navigator.push({
-                screen: routeNames.SPICE_DETAIL
-              })
-            }}
-          />
-          <SpiceBox />
-          <SpiceBox />
-          <SpiceBox />
-          <SpiceBox />
-          <SpiceBox />
-          <SpiceBox />
-          <SpiceBox />
-          <SpiceBox />
+          { this.renderSpiceList() }
         </View>
       </ScrollView>
     )
   }
 }
 
-SpicesList.propTypes = {
-  navigator: PropTypes.object
+SpicesList.defaultProps = {
+  spiceList: []
 }
 
-export default SpicesList
+SpicesList.propTypes = {
+  navigator: PropTypes.object,
+  spiceList: PropTypes.array
+}
+
+export default connect(
+  (state) => { return {
+    spiceList: state.spiceList.list
+  } }
+)(SpicesList)
