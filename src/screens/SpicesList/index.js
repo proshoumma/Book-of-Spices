@@ -24,15 +24,16 @@ class SpicesList extends Component {
 
   renderSpiceList = () => {
     const { spiceList } = this.props
-    return spiceList.map((eachSpice, index) => {
+    return spiceList.map((eachSpice) => {
       return (
         <SpiceBox
-          key={index}
+          key={eachSpice.id}
           name={eachSpice.name}
           image={eachSpice.thumbnail}
           onPress={() => {
             this.props.navigator.push({
-              screen: routeNames.SPICE_DETAIL
+              screen: routeNames.SPICE_DETAIL,
+              passProps: { spiceId: eachSpice.id }
             })
           }}
         />
@@ -62,6 +63,6 @@ SpicesList.propTypes = {
 
 export default connect(
   (state) => { return {
-    spiceList: state.spiceList.list
+    spiceList: state.appState.spicesList
   } }
 )(SpicesList)

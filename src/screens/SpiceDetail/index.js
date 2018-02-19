@@ -1,5 +1,7 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import {
   View,
   Text,
@@ -19,13 +21,65 @@ class SpiceDetail extends Component {
     drawUnderNavBar: false
   }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: 'default name',
+      description: 'default description',
+      usage: 'default usage',
+      images: []
+    }
+  }
+
   componentDidMount() {
-    this.props.navigator.setTitle({
-      title: "Cardamom"
+    const {
+      spicesList,
+      spiceId
+    } = this.props
+    const currentSpice = _.find(spicesList, { id: spiceId })
+
+    if (currentSpice !== null) {
+      const {
+        name,
+        description,
+        usage,
+        images
+      } = currentSpice
+  
+      this.setState({
+        name,
+        description,
+        usage,
+        images
+      })
+  
+      this.props.navigator.setTitle({
+        title: name
+      })
+    }
+  }
+
+  renderSliderImage = (images) => {
+    return images.map((eachImage, index) => {
+      return (
+        <Image
+          key={index}
+          source={eachImage.source}
+          style={styles.slider}
+          resizeMode={'cover'}
+        />
+      )
     })
   }
 
   render() {
+    const {
+      name,
+      description,
+      usage,
+      images
+    } = this.state
+
     return (
       <View style={styles.container}>
         <View style={styles.sliderContainer}>
@@ -36,33 +90,27 @@ class SpiceDetail extends Component {
             activeDot={<SliderDot active />}
             paginationStyle={{ bottom: 5 }}
           >
-            <Image
-              source={require('../../DB/assets/Anise/1.jpg')}
-              style={styles.slider}
-              resizeMode={'cover'}
-            />
-            <Image
-              source={require('../../DB/assets/Anise/2.jpg')}
-              style={styles.slider}
-              resizeMode={'cover'}
-            />
+            { this.renderSliderImage(images) }
           </Swiper>
         </View>
 
         <ScrollView>
           <View style={styles.infoContainer}>
             <TextSpaced style={styles.title} letterSpacing={3}>
-              { ` ${'Cumin'} ` }
+              { ` ${name} ` }
             </TextSpaced>
             <Text style={styles.text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat feugiat tortor at ultricies. Mauris ultricies augue arcu, vel mollis risus scelerisque ac. Vestibulum dictum lacus sit amet dignissim fringilla.
+              { description }
             </Text>
 
-            <TextSpaced style={[styles.title, styles.secondaryTitle]} letterSpacing={3}>
+            <TextSpaced
+              style={[styles.title, styles.secondaryTitle]}
+              letterSpacing={3}
+            >
               { ` ${'Usage'} ` }
             </TextSpaced>
             <Text style={styles.text}>
-              It is used in curry, biscuit, cake, sweets, desserts, bread etc.
+              { usage }
             </Text>
           </View>
         </ScrollView>
@@ -72,7 +120,13 @@ class SpiceDetail extends Component {
 }
 
 SpiceDetail.propTypes = {
-  navigator: PropTypes.object
+  navigator: PropTypes.object,
+  spicesList: PropTypes.array,
+  spiceId: PropTypes.number // coming from `push` method of previous screen
 }
 
-export default SpiceDetail
+export default connect((state) => {
+  return {
+    spicesList: state.appState.spicesList
+  }
+})(SpiceDetail)

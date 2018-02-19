@@ -5,11 +5,17 @@ import {
 } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import spiceList from './screens/SpicesList/reducer'
+/**
+ * the idea here is to use a single global reducer
+ * along with individual feature based reducer
+ * so individual devs can work in isolation
+ */
+import appState from './reducers'
+import spiceListFeature from './screens/SpicesList/reducers'
 
-// reducers combined
 const reducers = combineReducers({
-  spiceList
+  appState,
+  spiceListFeature
 })
 
 // middlewares

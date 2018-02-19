@@ -1,7 +1,7 @@
-import spicesList from '../../DB/spices'
+import spicesList from './DB/spices'
 
-const defaultState = {
-  list: spicesList
+export const defaultState = {
+  spicesList
 }
 
 export default (state = defaultState, action) => {

@@ -37,7 +37,7 @@ const SpiceBox = (props) => {
 
 SpiceBox.defaultProps = {
   name: 'Default',
-  image: require('./placeholder.jpg'),
+  image: 1,
   onPress: () => {}
 }
 
