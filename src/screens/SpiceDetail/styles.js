@@ -5,7 +5,8 @@ import {
   primaryFontSize,
   fontFamily,
   fontFamilyLight,
-  margin
+  margin,
+  appBackgroundColor
 } from '../../globalStyles'
 
 // maintaining a 16:10 aspect ratio
@@ -16,7 +17,7 @@ const sliderHeight = width * (10/16)
 export default {
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: appBackgroundColor
   },
 
   sliderContainer: {
@@ -27,6 +28,14 @@ export default {
   slider: {
     height: sliderHeight,
     width: sliderWidth
+  },
+
+  fakeImageForTransition: {
+    height: sliderHeight,
+    width: sliderWidth,
+    position: 'absolute',
+    top: 0,
+    left: 0
   },
 
   infoContainer: {

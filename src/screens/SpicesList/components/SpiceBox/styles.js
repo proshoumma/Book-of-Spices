@@ -35,7 +35,7 @@ export default {
   },
 
   image: {
-    flex: 1,
+    height: boxHeight,
     width: boxWidth,
     borderRadius: borderRadius * 2
   },

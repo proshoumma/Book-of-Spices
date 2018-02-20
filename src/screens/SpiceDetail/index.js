@@ -10,10 +10,13 @@ import {
 } from 'react-native'
 import TextSpaced from 'react-native-letter-spacing'
 import Swiper from 'react-native-swiper'
+import { SharedElementTransition } from 'react-native-navigation'
 
 import styles from './styles'
 import SliderDot from './components/SliderDot'
 import { navigatorStyles } from '../../globalStyles'
+
+const SHARED_ELEMENT_TRANSITION_DURATION = 400
 
 class SpiceDetail extends Component {
   static navigatorStyle = {
@@ -27,7 +30,8 @@ class SpiceDetail extends Component {
       name: 'default name',
       description: 'default description',
       usage: 'default usage',
-      images: []
+      images: [],
+      showSlider: false
     }
   }
 
@@ -57,9 +61,41 @@ class SpiceDetail extends Component {
         title: name
       })
     }
+
+    // timer for slider to wait for finishing up SharedElementTransition
+    setTimeout(() => {
+      this.setState({ showSlider: true })
+    }, SHARED_ELEMENT_TRANSITION_DURATION)
   }
 
-  renderSliderImage = (images) => {
+  renderFakeImageForTransition = (id, thumbnail) => {
+    return (
+      <View style={styles.fakeImageForTransition}>
+        <SharedElementTransition
+          sharedElementId={`${id}`}
+          showDuration={SHARED_ELEMENT_TRANSITION_DURATION}
+          hideDuration={SHARED_ELEMENT_TRANSITION_DURATION}
+          showInterpolation={{
+            type: 'linear',
+            easing: 'FastOutSlowIn'
+          }}
+          hideInterpolation={{
+            type: 'linear',
+            easing: 'FastOutSlowIn'
+          }}
+          animateClipBounds={true}
+        >
+          <Image
+            source={thumbnail}
+            style={styles.slider}
+            resizeMode={'cover'}
+          />
+        </SharedElementTransition>
+      </View>
+    )
+  }
+
+  renderSliderImages = (images) => {
     return images.map((eachImage, index) => {
       return (
         <Image
@@ -72,26 +108,41 @@ class SpiceDetail extends Component {
     })
   }
 
+  renderSlider = (showSlider, images) => {
+    if (!showSlider) return null
+    else return (
+      <Swiper
+        loop={false}
+        bounces={true}
+        dot={<SliderDot />}
+        activeDot={<SliderDot active />}
+        paginationStyle={{ bottom: 5 }}
+      >
+        { this.renderSliderImages(images) }
+      </Swiper>
+    )
+  }
+
   render() {
+    const {
+      spiceThumbnail,
+      spiceId
+    } = this.props
+
     const {
       name,
       description,
       usage,
-      images
+      images,
+      showSlider
     } = this.state
 
     return (
       <View style={styles.container}>
+        { this.renderFakeImageForTransition(spiceId, spiceThumbnail) }
+
         <View style={styles.sliderContainer}>
-          <Swiper
-            loop={false}
-            bounces={true}
-            dot={<SliderDot />}
-            activeDot={<SliderDot active />}
-            paginationStyle={{ bottom: 5 }}
-          >
-            { this.renderSliderImage(images) }
-          </Swiper>
+          { this.renderSlider(showSlider, images) }
         </View>
 
         <ScrollView>
@@ -122,7 +173,8 @@ class SpiceDetail extends Component {
 SpiceDetail.propTypes = {
   navigator: PropTypes.object,
   spicesList: PropTypes.array,
-  spiceId: PropTypes.number // coming from `push` method of previous screen
+  spiceId: PropTypes.number, // coming from `push` method of previous screen
+  spiceThumbnail: PropTypes.number // coming from `push` method of previous screen
 }
 
 export default connect((state) => {

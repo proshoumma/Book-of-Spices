@@ -28,12 +28,17 @@ class SpicesList extends Component {
       return (
         <SpiceBox
           key={eachSpice.id}
+          id={eachSpice.id}
           name={eachSpice.name}
           image={eachSpice.thumbnail}
           onPress={() => {
             this.props.navigator.push({
               screen: routeNames.SPICE_DETAIL,
-              passProps: { spiceId: eachSpice.id }
+              passProps: {
+                spiceId: eachSpice.id,
+                spiceThumbnail: eachSpice.thumbnail
+              },
+              sharedElements: [ eachSpice.id ]
             })
           }}
         />
@@ -43,11 +48,13 @@ class SpicesList extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          { this.renderSpiceList() }
-        </View>
-      </ScrollView>
+      <View style={styles.container}>
+        <ScrollView>
+          <View style={styles.listContainer}>
+            { this.renderSpiceList() }
+          </View>
+        </ScrollView>
+      </View>
     )
   }
 }
