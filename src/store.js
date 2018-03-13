@@ -11,11 +11,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
  * so individual devs can work in isolation
  */
 import appState from './reducers'
-import spiceListFeature from './screens/SpicesList/reducers'
+import spiceList from './screens/SpicesList/reducers'
+import skillTest from './screens/SkillTest/reducers'
 
 const reducers = combineReducers({
   appState,
-  spiceListFeature
+  spiceList,
+  skillTest
 })
 
 // middlewares

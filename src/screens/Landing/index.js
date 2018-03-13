@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import Button from './components/Button'
+import Button from '../../components/Button'
 import { routeNames } from '../../constants'
 
 // background image
