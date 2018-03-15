@@ -5,6 +5,8 @@ import {
   Text
 } from 'react-native'
 
+import styles from './styles'
+
 const ResultView = (props) => {
   const {
     score,
@@ -14,9 +16,9 @@ const ResultView = (props) => {
   const correctAnswerPercentage = Math.round((score / questionsCount) * 100)
 
   return (
-    <View>
-      <Text>Congrats! You have scored</Text>
-      <Text>{ correctAnswerPercentage }%</Text>
+    <View style={styles.contaienr}>
+      <Text style={styles.title}>You have scored</Text>
+      <Text style={styles.score}>{ correctAnswerPercentage }%</Text>
     </View>
   )
 }

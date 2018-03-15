@@ -1,7 +1,8 @@
 import { Dimensions } from 'react-native'
 
 import {
-  appBackgroundColor
+  appBackgroundColor,
+  margin
 } from '../../../../globalStyles'
 
 // maintaining a 16:10 aspect ratio
@@ -17,6 +18,15 @@ export default {
 
   questionContainer: {
     flex: 1
+  },
+
+  multipleChoiceContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginLeft: margin,
+    marginRight: margin
   },
 
   image: {

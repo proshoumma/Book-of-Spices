@@ -8,8 +8,10 @@ import {
 
 import styles from './styles'
 import ToggleButton from '../ToggleButton'
-import DoneButton from '../DoneButton'
-import NextButton from '../NextButton'
+import BottomButton from '../BottomButton'
+import Timer from '../Timer'
+
+const TIMER = 30
 
 class TestView extends Component {
   constructor(props) {
@@ -18,7 +20,40 @@ class TestView extends Component {
       questionIndex: 0,
       activeButton: '',
       currentScore: 0,
-      activeButtonIsCorrectAnswer: false
+      timer: TIMER,
+      activeButtonIsCorrectAnswer: false,
+      timerId: null
+    }
+  }
+
+  componentDidMount() {
+    const timerId = setInterval(this.timer.bind(this), 1000)
+    this.setState({ timerId })
+  }
+
+  componentWillUnmount() {
+    const { timerId } = this.state
+    clearInterval(timerId)
+  }
+
+  timer() {
+    const {
+      timer,
+      timerId,
+      currentScore
+    } = this.state
+
+    const { updateUsersScore } = this.props
+
+    // check if timer has ended
+    if (timer !== 0) {
+      this.setState({ timer: timer - 1 })
+    } else {
+      // clear the timer
+      clearInterval(timerId)
+
+      // update user's score
+      updateUsersScore(currentScore)
     }
   }
 
@@ -85,7 +120,7 @@ class TestView extends Component {
           source={image}
           style={styles.image}
         />
-        <View>
+        <View style={styles.multipleChoiceContainer}>
           { this.renderMultipleChoiceButtons(multipleChoiceOptions) }
         </View>
       </View>
@@ -98,7 +133,11 @@ class TestView extends Component {
       updateUsersScore
     } = this.props
 
-    const { questionIndex } = this.state
+    const {
+      questionIndex,
+      activeButton,
+      timer
+    } = this.state
     
     // initially, questionnaire is empty
     // since redux have to update the props
@@ -109,22 +148,31 @@ class TestView extends Component {
       questionnaire.length - 1 === questionIndex
     ) ? true :false
 
+    // determine bottom button label according to lastQuestion status
+    const bottomButtonLabel = lastQuestion
+      ? 'Done'
+      : 'Next'
+
+    // determine bottom button action according to lastQuestion status
+    const bottomButtonAction = lastQuestion
+      ? () => this.updateCurrentScoreOnlyOnce(updateUsersScore)
+      : () => this.updateQuestionIndex(questionIndex, questionnaire) 
+
+    // check if user selected an option, otherwise bottom button will be inactive
+    const bottomButtonIsActive = activeButton !== ''
+      ? true
+      : false
+
     return (
       <View style={styles.container}>
         { this.renderQuestion(questionnaire, questionIndex) }
-
+        <Timer value={timer} />
         <View style={styles.nextButtonContainer}>
-          { !lastQuestion && <NextButton 
-            onPress={() => {
-              this.updateQuestionIndex(questionIndex, questionnaire) 
-            }}
-          /> }
-          
-          { lastQuestion && <DoneButton
-            onPress={() => {
-              this.updateCurrentScoreOnlyOnce(updateUsersScore)
-            }}
-          /> }
+          <BottomButton
+            label={bottomButtonLabel}
+            onPress={bottomButtonAction}
+            active={bottomButtonIsActive}
+          />
         </View>
       </View>
     )

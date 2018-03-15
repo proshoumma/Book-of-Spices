@@ -12,7 +12,7 @@ class SkillTest extends Component {
   static navigatorStyle = {
     ...navigatorStyles
   }
-
+  
   constructor(props) {
     super(props)
     this.state = {

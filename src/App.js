@@ -10,8 +10,7 @@ registerScreens(Navigation.registerComponent, routes)
 // start the app
 Navigation.startSingleScreenApp({
   screen: {
-    // screen: routeNames.LANDING
-    screen: routeNames.SKILL_TEST
+    screen: routeNames.LANDING
   },
   appStyle: {
     keepStyleAcrossPush: false
