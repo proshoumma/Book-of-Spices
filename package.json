@@ -12,6 +12,7 @@
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "0.51.0",
+    "react-native-animatable": "^1.2.4",
     "react-native-letter-spacing": "^0.0.5",
     "react-native-navigation": "^1.1.346",
     "react-native-swiper": "^1.5.13",

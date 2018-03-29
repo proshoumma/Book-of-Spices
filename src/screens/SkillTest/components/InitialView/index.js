@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  View,
-  Text
-} from 'react-native'
+import * as Animatable from 'react-native-animatable'
+import { View } from 'react-native'
 
 import Button from '../../../../components/Button'
 import styles from './styles'
@@ -12,17 +10,41 @@ const InitialView = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <Text style={styles.mainTitle}>Test your spice skill</Text>
-        <Text style={styles.infoText}>Recognize 10 random spices</Text>
-        <Text style={styles.infoText}>Time limit is 30 seconds!</Text>
+        <Animatable.Text
+          style={styles.mainTitle}
+          animation="bounceIn"
+          delay={300}
+        >
+          Test your spice skill
+        </Animatable.Text>
+
+        <Animatable.Text
+          style={styles.infoText}
+          animation="fadeInUp"
+          delay={800}
+        >
+          Recognize 10 random spices
+        </Animatable.Text>
+
+        <Animatable.Text
+          style={styles.infoText}
+          animation="fadeInUp"
+          delay={1000}
+        >
+          Time limit is 30 seconds!
+        </Animatable.Text>
       </View>
       
-      <View style={styles.bottomButtonContainer}>
+      <Animatable.View
+        style={styles.bottomButtonContainer}
+        animation="bounce"
+        delay={2000}
+      >
         <Button
           label={'Start Test'}
           onPress={props.onStartPress}
         />
-      </View>
+      </Animatable.View>
     </View>
   )
 }

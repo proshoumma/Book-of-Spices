@@ -1,3 +1,5 @@
+import { Dimensions } from 'react-native'
+
 import {
   primaryFontColor,
   fontFamily,
@@ -7,10 +9,19 @@ import {
   appBackgroundColor
 } from '../../../../globalStyles'
 
+// maintaining a 16:10 aspect ratio
+const { width, height } = Dimensions.get('window')
+
 export default {
   container: {
     flex: 1,
     backgroundColor: appBackgroundColor
+  },
+
+  backgroundImage: {
+    position: 'absolute',
+    width: width,
+    height: height
   },
 
   infoContainer: {
