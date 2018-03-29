@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
+    "lottie-react-native": "2.3.2",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "0.51.0",

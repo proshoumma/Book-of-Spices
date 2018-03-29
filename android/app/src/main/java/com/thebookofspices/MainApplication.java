@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
+import com.airbnb.android.react.lottie.LottiePackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +18,7 @@ public class MainApplication extends NavigationApplication {
 
   protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
-      // eg. new VectorIconsPackage()
+      new LottiePackage()
     );
   }
 
