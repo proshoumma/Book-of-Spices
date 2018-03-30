@@ -5,6 +5,7 @@ import {
   View,
   Image
 } from 'react-native'
+import * as Animatable from 'react-native-animatable'
 
 import styles from './styles'
 import ToggleButton from '../ToggleButton'
@@ -164,7 +165,7 @@ class TestView extends Component {
       : false
 
     return (
-      <View style={styles.container}>
+      <Animatable.View animation="fadeIn" style={styles.container}>
         { this.renderQuestion(questionnaire, questionIndex) }
         <Timer value={timer} />
         <View style={styles.nextButtonContainer}>
@@ -174,7 +175,7 @@ class TestView extends Component {
             active={bottomButtonIsActive}
           />
         </View>
-      </View>
+      </Animatable.View>
     )
   }
 }

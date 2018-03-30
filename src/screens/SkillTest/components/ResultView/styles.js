@@ -4,7 +4,6 @@ import {
   primaryFontColor,
   themeColor,
   appBackgroundColor,
-  margin
 } from '../../../../globalStyles'
 
 export default {
@@ -15,16 +14,42 @@ export default {
     alignItems: 'center'
   },
 
+  contaienrRes: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  calculatingText: {
+    fontFamily: themeFont,
+    fontSize: 36,
+    color: themeColor
+  },
+
+  score: {
+    textAlign: 'center',
+    fontFamily: themeFont,
+    color: themeColor,
+    fontSize: 60,
+  },
+
   title: {
+    textAlign: 'center',
+    marginTop: 30,
     fontFamily: fontFamilyLight,
     fontSize: 28,
     color: primaryFontColor
   },
 
-  score: {
-    fontFamily: themeFont,
-    color: themeColor,
-    fontSize: 60,
-    marginTop: margin
+  resultAnimationTopScore: {
+    position: 'relative',
+    height: 400,
+    width: 400
+  },
+
+  resultAnimationAverage: {
+    position: 'absolute',
+    height: 400,
+    width: 400
   }
 }
