@@ -21,7 +21,7 @@ const extractSpiceNames = (spiceList) => {
  * @param {number} limit amount of multiple choice options to generate
  */
 const generateMultipleChoiceOptions = (correctAnswer, spiceNames, limit) => {
-  const options = []
+  let options = []
 
   // include the correct answer
   options.push({ name: correctAnswer, correct: true })
@@ -38,6 +38,9 @@ const generateMultipleChoiceOptions = (correctAnswer, spiceNames, limit) => {
       })
     }
   }
+
+  // shuffle the options
+  options = _.shuffle(options)
 
   // return multiple choice options
   return options
