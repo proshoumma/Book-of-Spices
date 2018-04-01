@@ -20,8 +20,7 @@ const SHARED_ELEMENT_TRANSITION_DURATION = 400
 
 class SpiceDetail extends Component {
   static navigatorStyle = {
-    ...navigatorStyles,
-    drawUnderNavBar: false
+    ...navigatorStyles
   }
 
   constructor(props) {

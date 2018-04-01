@@ -27,7 +27,7 @@ export const navigatorStyles = {
   navBarTextFontFamily: themeFont,
   navBarTextFontSize: Platform.OS === 'ios' ? 22 : 24,
   topBarElevationShadowEnabled: Platform.OS === 'ios' ? false : true,
-  drawUnderNavBar: true,
+  drawUnderNavBar: false,
   navBarBackgroundColor: 'rgba(255, 255, 255, 0.9)',
   orientation: 'portrait',
 

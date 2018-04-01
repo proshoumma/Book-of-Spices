@@ -13,7 +13,8 @@ import { routeNames } from '../../constants'
 
 class SpicesList extends Component {
   static navigatorStyle = {
-    ...navigatorStyles
+    ...navigatorStyles,
+    drawUnderNavBar: true
   }
 
   componentDidMount() {

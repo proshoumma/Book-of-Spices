@@ -34,5 +34,29 @@ export default [
       { source: require('./assets/Black_Cumin/2.jpg') },
       { source: require('./assets/Black_Cumin/3.jpg') },
     ]
+  },
+  {
+    id: 4,
+    name: 'Caraway Seed',
+    description: 'Caraway seed, the seed of a  plant of the parsley family, used for flavoring and as a source of oil. Caraway seeds feature warn, sweet, and slightly peppery aroma.',
+    usage: 'It features in savory dishes, including cabbage soups or salads. It gives a pleasant aroma to bread, cakes, biscuits, and cheese. Also, along with other spicy items like sausage and other meat preparations.',
+    thumbnail: require('./assets/Caraway_Seed/1.jpg'),
+    images: [
+      { source: require('./assets/Caraway_Seed/1.jpg') },
+      { source: require('./assets/Caraway_Seed/2.jpg') },
+      { source: require('./assets/Caraway_Seed/3.jpg') },
+    ]
+  },
+  {
+    id: 5,
+    name: 'Cardamom',
+    description: 'Cardamom, the aromatic seeds of a plant of the ginger family, used as a spice and also medicinally. It has a strong, pungent flavor and aroma, with hints of lemon, mint, and smoke.',
+    usage: 'In Indian recipes, Cardamom pods are used in preparing basmati rice and various curries. In Middle Eastern recipes, Ground Cardamom is used in preparing certain desserts.',
+    thumbnail: require('./assets/Cardamom/1.jpg'),
+    images: [
+      { source: require('./assets/Cardamom/1.jpg') },
+      { source: require('./assets/Cardamom/2.jpg') },
+      { source: require('./assets/Cardamom/3.jpg') },
+    ]
   }
 ]

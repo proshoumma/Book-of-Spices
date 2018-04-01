@@ -2,29 +2,36 @@ import { Dimensions } from 'react-native'
 
 import {
   borderRadius,
-  primaryFontColor,
+  buttonHeight,
   primaryFontSize,
   fontFamilyBold,
-  buttonHeight,
-  margin
+  themeColor,
+  margin,
 } from '../../../../globalStyles'
 
 const { width } = Dimensions.get('window')
-const buttonWidth = (width / 2) - (margin * 2)
+const buttonWidth = width - (margin * 2)
 
 export default {
   container: {
     height: buttonHeight,
     width: buttonWidth,
+    marginLeft: margin,
+    marginRight: margin,
+    marginBottom: margin,
     borderRadius,
-    backgroundColor: 'rgba(255, 255, 255, 0.80)',
     justifyContent: 'center',
-    alignItems: 'center'    
+    alignItems: 'center',
+    backgroundColor: `${themeColor}20`,
+  },
+
+  active: {
+    backgroundColor: themeColor
   },
 
   label: {
-    fontSize: primaryFontSize,
+    fontSize: primaryFontSize - 2,
     fontFamily: fontFamilyBold,
-    color: primaryFontColor
-  }
+    color: 'white'
+  },
 }
