@@ -21,6 +21,7 @@ const InitialView = (props) => {
         <Animatable.Text
           style={styles.infoText}
           animation="fadeInUp"
+          duration={500}
           delay={800}
         >
           Recognize 10 random spices
@@ -29,6 +30,7 @@ const InitialView = (props) => {
         <Animatable.Text
           style={styles.infoText}
           animation="fadeInUp"
+          duration={500}
           delay={1000}
         >
           Time limit is 60 seconds!
@@ -38,7 +40,7 @@ const InitialView = (props) => {
       <Animatable.View
         style={styles.bottomButtonContainer}
         animation="bounceIn"
-        delay={1500}
+        delay={1200}
       >
         <Button
           label={'Start Test'}

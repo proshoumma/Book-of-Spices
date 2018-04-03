@@ -12,7 +12,7 @@ import ToggleButton from '../ToggleButton'
 import BottomButton from '../BottomButton'
 import Timer from '../Timer'
 
-const TIMER = 30
+const TIMER = 60
 
 class TestView extends Component {
   constructor(props) {

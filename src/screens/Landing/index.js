@@ -26,7 +26,8 @@ class Landing extends Component {
 
   navigateToSkillTest = () => {
     this.props.navigator.push({
-      screen: routeNames.SKILL_TEST
+      screen: routeNames.SKILL_TEST,
+      overrideBackPress: true
     })
   }
   

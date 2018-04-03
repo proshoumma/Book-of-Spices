@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Alert } from 'react-native'
 
 import InitialView from './components/InitialView'
 import TestView from './components/TestView'
@@ -19,6 +20,25 @@ class SkillTest extends Component {
       startTest: false,
       testDone: false,
       finalScore: 0
+    }
+
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this))
+  }
+
+  onNavigatorEvent(event) {
+    const { startTest } = this.state
+    const { navigator } = this.props
+
+    if (event.id === 'backPress') {
+      if (!startTest) navigator.popToRoot()
+      else Alert.alert(
+        'Test on Progress',
+        'Your skill test is on progress. All progress will be lost if you go back now. Are you sure to go back?',
+        [
+          { text: 'Yes', onPress: () => navigator.pop() },
+          { text: 'No', onPress: () => { /* do nothing */ } },
+        ]
+      )
     }
   }
 

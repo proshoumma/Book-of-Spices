@@ -51,19 +51,19 @@ const generateMultipleChoiceOptions = (correctAnswer, spiceNames, limit) => {
  * @param {number} amount maximum amount of indexes
  * @param {array} randomIndexes generated random indexes
  */
-const generateIndexes = (amount, randomIndexes=[]) => {
+const generateIndexes = (amount, spiceListLength, randomIndexes=[]) => {
   if (randomIndexes.length >= amount) {
     return randomIndexes
   }
   else {
     // generates a random number
-    const randomNumber = _.random(0, amount - 1)
+    const randomNumber = _.random(0, spiceListLength - 1)
     
     // check if random number is already in the generated index
     if (randomIndexes.includes(randomNumber) === false) {
       randomIndexes.push(randomNumber)
     }
-    return generateIndexes(amount, randomIndexes)
+    return generateIndexes(amount, spiceListLength, randomIndexes)
   }
 }
 
@@ -110,7 +110,7 @@ const preapreQuestionnaire = (spiceList) => {
     spiceList.length < QUESTION_LIMIT
   ) ? spiceList.length : QUESTION_LIMIT
 
-  const randomSpiceIndexes = generateIndexes(maxQuestionLimit)
+  const randomSpiceIndexes = generateIndexes(maxQuestionLimit, spiceList.length)
   const selectedSpices = selectSpices(spiceList, randomSpiceIndexes)
   const preparedDataSet = generateQuestionDataSet(selectedSpices)
   return preparedDataSet
