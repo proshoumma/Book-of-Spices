@@ -24,7 +24,8 @@ const styles = {
     marginLeft: 5,
     width: 30,
     height: 4,
-    borderRadius: 5
+    borderRadius: 5,
+    elevation: 3
   }
 }
 

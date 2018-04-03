@@ -6,14 +6,12 @@ import {
   TouchableOpacity
 } from 'react-native'
 import TextSpaced from 'react-native-letter-spacing'
-import { SharedElementTransition } from 'react-native-navigation'
 
 import styles from './styles'
 import { activeOpacity } from '../../../../globalStyles'
 
 const SpiceBox = (props) => {
   const {
-    id,
     name,
     image,
     onPress
@@ -22,13 +20,11 @@ const SpiceBox = (props) => {
   return (
     <TouchableOpacity activeOpacity={activeOpacity} onPress={onPress}>
       <View style={styles.container}>
-        <SharedElementTransition sharedElementId={ `${id}` }>
-          <Image
-            source={image}
-            style={styles.image}
-            resizeMode={'cover'}
-          />
-        </SharedElementTransition>
+        <Image
+          source={image}
+          style={styles.image}
+          resizeMode={'cover'}
+        />
         
         <View style={styles.textContainer}>
           <TextSpaced style={styles.text} letterSpacing={1}>

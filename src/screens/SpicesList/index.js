@@ -38,8 +38,7 @@ class SpicesList extends Component {
               passProps: {
                 spiceId: eachSpice.id,
                 spiceThumbnail: eachSpice.thumbnail
-              },
-              sharedElements: [ eachSpice.id ]
+              }
             })
           }}
         />
