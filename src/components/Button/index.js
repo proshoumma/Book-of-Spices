@@ -13,7 +13,8 @@ import styles from './styles'
 const Button = (props) => {
   const {
     label,
-    onPress
+    onPress,
+    theme
   } = props
 
   // since TouchableNativeFeedback is not supported on ios
@@ -24,8 +25,8 @@ const Button = (props) => {
 
   return(
     <ButtonComponent onPress={onPress}>
-      <View style={styles.container}>
-        <TextSpaced style={styles.label} letterSpacing={3}>
+      <View style={[styles.container, styles[theme]]}>
+        <TextSpaced style={[styles.label, styles[`label_${theme}`]]} letterSpacing={3}>
           { ` ${label.toUpperCase()} ` }
         </TextSpaced>
       </View>
@@ -35,12 +36,17 @@ const Button = (props) => {
 
 Button.defaultProps = {
   label: 'Default String',
-  onPress: () => { /* do nothing */ }
+  onPress: () => { /* do nothing */ },
+  theme: 'default'
 }
 
 Button.propTypes = {
   label: PropTypes.string,
-  onPress: PropTypes.func
+  onPress: PropTypes.func,
+  theme: PropTypes.oneOf([
+    'default',
+    'themed'
+  ])
 }
 
 export default Button

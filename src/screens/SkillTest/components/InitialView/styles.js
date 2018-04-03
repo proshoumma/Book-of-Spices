@@ -50,6 +50,6 @@ export default {
     flex: 0.2,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingBottom: margin
+    paddingBottom: margin * 2
   }
 }

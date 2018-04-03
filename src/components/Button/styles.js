@@ -6,7 +6,8 @@ import {
   primaryFontSize,
   fontFamilyBold,
   buttonHeight,
-  margin
+  margin,
+  themeColor
 } from '../../globalStyles'
 
 const { width } = Dimensions.get('window')
@@ -26,5 +27,21 @@ export default {
     fontSize: primaryFontSize,
     fontFamily: fontFamilyBold,
     color: primaryFontColor
+  },
+
+  label_default: {
+
+  },
+
+  label_themed: {
+    color: 'white'
+  },
+
+  default: {
+
+  },
+
+  themed: {
+    backgroundColor: themeColor
   }
 }

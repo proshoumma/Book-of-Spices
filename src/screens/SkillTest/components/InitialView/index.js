@@ -31,17 +31,18 @@ const InitialView = (props) => {
           animation="fadeInUp"
           delay={1000}
         >
-          Time limit is 30 seconds!
+          Time limit is 60 seconds!
         </Animatable.Text>
       </View>
       
       <Animatable.View
         style={styles.bottomButtonContainer}
-        animation="bounce"
-        delay={2000}
+        animation="bounceIn"
+        delay={1500}
       >
         <Button
           label={'Start Test'}
+          theme={'themed'}
           onPress={props.onStartPress}
         />
       </Animatable.View>
