@@ -30,6 +30,11 @@ In learning view you can review all the spices and can press on them to view the
 In Test view, there will be multiple choice options with randomly generated questionnaire. The questionnaire and multiple choice options are prepared using some bespoke utility function (available on `src/utils/preapreQuestionnaire.js`) with help from `lodash` library. The animations are done using `lottie-react-native` and `react-native-animatable`. Also there is a little drama added for calculating the result! 😁
 
 ## Development
+Install dependencies with yarn.
+```
+yarn install
+```
+
 For starting the project or starting the react native bundler, use the following command:
 ```
 yarn start
@@ -38,12 +43,10 @@ yarn start
 Then you can run the app on ios/android using react-native commands:
 ```
 react-native run-ios
-```
-```
 react-native run-android
 ```
 
-Make sure you have [nodeJS](https://nodejs.org/en/), [react-native-cli](https://www.npmjs.com/package/react-native-cli), [Xcode](https://developer.apple.com/xcode/), and [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
+Make sure you have [nodeJS](https://nodejs.org/en/), [yarn](https://yarnpkg.com/en/), [react-native-cli](https://www.npmjs.com/package/react-native-cli), [Xcode](https://developer.apple.com/xcode/), and [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
 
 #### Caution
 Please do not use arrow functions for react's lifecycle functions like `componentDidMount`, `componentWillMount` etc. This breaks the hot module patching for regarding screens. It's a bug from `wix/react-native-navigation` library.
