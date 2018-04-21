@@ -2,7 +2,7 @@
 ![Preview](./artwork/banner.jpg)
 
 #### An educational app to help you learn about spices, built on top of react-native. 
-Try it on [PlayStore](https://play.google.com/store/apps/details?id=com.thebookofspices)
+[![Preview](./artwork/play.png)](https://play.google.com/store/apps/details?id=com.thebookofspices)
 
 ## Built With
 The project is built on top of react-native using the following major libraries:
